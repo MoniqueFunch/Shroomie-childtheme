@@ -7,7 +7,7 @@ get_header();
   :root {}
   #striber {
     width: 100%;
-    height: 450px;
+    height: 500px;
     background-image: url(https://moniquemariefunch.dk/kea/shroomie/wp-content/themes/Divi-child/img/striber.png);
     background-repeat: no-repeat;
     background-position: 15% 10%;
@@ -30,9 +30,6 @@ get_header();
     text-decoration: none;
   }
 
-.h1, h1 {
-font-size: 67px !important;
-}
 .shroomiepic {
   -webkit-box-shadow: 0px 5px 10px -1px rgba(65,60,88,0.63); 
 box-shadow: 0px 5px 10px -1px rgba(65,60,88,0.63);
@@ -67,6 +64,9 @@ color: #EC6959;
     #striber {
       background-position: right;
     }
+    .h1, h1 {
+font-size: 67px !important;
+}
   }
 
 </style>
@@ -84,7 +84,7 @@ color: #EC6959;
     <div class="row">
       <div class="col-12 col-md-6 m-5 p-5">
       <h1>Lidt om os</h1>
-      <p>Vi er Shroomie, din nye roomie. Men vi er mere en bare en svampekasse, vi er et fællesskab med en mission. Vi vil gerne gøre det lettere for alle, uanset hvem du er og hvor du bor, at træffe bæredygtige valg. </p>
+      <p>Vi er Shroomie, din nye roomie. Men vi er mere en bare en svampekasse, vi er et fællesskab med en mission. Vi vil gøre det lettere for dig, at træffe bæredygtige valg! </p>
       </div>
     </div>
   </div>
@@ -133,7 +133,7 @@ color: #EC6959;
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js"></script>
    
     <!-- Egen Script -->
-   <script> 
+<script> 
     gsap.registerPlugin(ScrollTrigger);
 
 const sections = document.querySelectorAll("section");
@@ -146,15 +146,18 @@ sections.forEach((section) => {
       scrollTrigger: {
         trigger: section,
         start: "200% 200%",
-        end: "+=400",
+        end: "+=250",
         scrub: true,
         // markers: true,
       },
     })
     .from(img, {
-      // duration: 1,
-      opacity: 0.5,
-    });
+      opacity: 0.3,
+      
+    })
+    .to(img, {
+     opacity: 1,
+   });
 });
 
 const buttons = gsap.utils.toArray(".cols-2");
@@ -177,6 +180,7 @@ buttons.forEach((element, index) => {
   });
   tl.from(items, { opacity: 0, duration: 0.3 }, 0);
 });
+
   </script>
 
 </body>
